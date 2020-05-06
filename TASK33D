@@ -1,0 +1,29 @@
+void setup() {
+
+pinMode(D0, OUTPUT);
+
+Serial.begin(9600);
+ Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", handler);
+}
+
+void handler(const char *event, const char *data)
+{
+    int num_times = 2;
+       if (strcmp(data,"pat")==0) {
+
+
+ for (int i = 1; i <= num_times; ++i)
+  {
+         digitalWrite(D0,HIGH);
+          delay(1000);
+         digitalWrite(D0,LOW);
+           delay(1000);
+   }
+        
+    }
+}
+
+void loop() {
+
+    
+}
